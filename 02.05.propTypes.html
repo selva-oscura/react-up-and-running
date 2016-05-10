@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Life (and death?) of a Component Now With Properties</title>
+	</head>
+	<body>
+		<div id="app">
+			<!-- app code will appear here -->
+		</div>
+		<script src="./react/build/react.js"></script>
+		<script src="./react/build/react-dom.js"></script>
+		<script>
+			'use strict';
+			let PropertiedComponent = React.createClass({
+				propTypes: {
+					name: React.PropTypes.string.isRequired,
+					relation: React.PropTypes.string.isRequired,
+					letters: React.PropTypes.string.isRequired,
+				},
+				render: function(){
+					return React.DOM.span(null, "My Name is " + this.props.name + ". You killed my " + this.props.relation + ". Prepare to "+this.props.direOutcome+"!  This death threat has been brought to you by the letters: '" + this.props.letters + "'. <-- NOTE: this.props.name isRequired and present, this.props.relation isRequired and not present (=> it being undefined and throwing a warning in the console), this props.direOutcome is not specified as isRequired, so its absence => it being undefined, but with no warning in the console, and letters were given the PropTypes string.isRequired, but data of type number was provided (passed data shows up in the appropriate place, but a warning notes that a number rather than a string is present => failed propType check) ")
+				}
+			})
+			ReactDOM.render(
+				React.createElement(PropertiedComponent, {
+					name: "Propertied Component",
+					letters: 123,
+				}),
+				document.getElementById('app')
+			);
+		</script>
+	</body>
+</html>
