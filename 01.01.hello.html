@@ -13,8 +13,21 @@
 		<script> 
 			// app code 
 			ReactDOM.render(
-				// React.DOM.h1(null, "Hello React!"),
-				React.DOM.h1({id:'my-heading'}, "Oh, brave new world that has such frameworks in it!"),
+				React.DOM.div(
+					{id:'my-div'}, 
+					React.DOM.h1(
+						{id:"my-heading"}, 
+						"Hello World"
+					),
+					React.DOM.h2(
+						{id:"my-subheading"},
+						"Oh, brave new world that has such frameworks in it!"
+					),
+					React.DOM.p(
+						{id:"my-snarky-commentary"},
+						"But, ye gods, this is ugly syntax!"
+					),
+				null),
 				document.getElementById("app")
 			)
 		</script>
