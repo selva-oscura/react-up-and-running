@@ -3,6 +3,11 @@
 	<head>
 		<title>Hello React</title>
 		<meta charset="utf-8">
+		<style type="text/css">
+			.allegedlyPretty{
+				color: aqua;
+			}
+		</style>
 	</head>
 	<body>
 		<div id="app">
@@ -14,17 +19,33 @@
 			// app code 
 			ReactDOM.render(
 				React.DOM.div(
-					{id:'my-div'}, 
+					{
+						id:'my-div', 
+						style: {
+							boxShadow:"0px 4px 4px rgba(0,0,127, 0.2)",
+							padding: "42px",
+							margin: "24px",
+						}
+					}, 
 					React.DOM.h1(
-						{id:"my-heading"}, 
+						{
+							id:"my-heading", 
+							className:'allegedlyPretty',
+						}, 
 						"Hello World"
 					),
 					React.DOM.h2(
-						{id:"my-subheading"},
+						{
+							id:"my-subheading",
+							style:{
+								fontFamily:"Verdana",
+								textDecoration: "underline",
+							}
+						},
 						"Oh, brave new world that has such frameworks in it!"
 					),
 					React.DOM.p(
-						{id:"my-snarky-commentary"},
+						{ id:"my-snarky-commentary" },
 						"But, ye gods, this is ugly syntax!"
 					),
 				null),
