@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Life (and death?) of a Component Strikes Back</title>
+	</head>
+	<body>
+		<div id="app">
+			<!-- app code will appear here -->
+		</div>
+		<script src="./react/build/react.js"></script>
+		<script src="./react/build/react-dom.js"></script>
+		<script>
+			'use strict';
+			ReactDOM.render(
+				React.createElement("span", null, "and now just using text to define the created element"),
+				document.getElementById('app')
+			);
+		</script>
+	</body>
+</html>
