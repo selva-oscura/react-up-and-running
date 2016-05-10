@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hello React</title>
+		<meta charset="utf-8">
+		<script src="react/build/react.js"></script>
+		<script src="react/build/react-dom.js"></script>
+		<script src="babel/browser.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<!-- app renders here -->
+		</div>
+		<script type="text/babel"> 
+			ReactDOM.render(
+				<div id="my-div">
+					<h1 id="my-heading">Hello World</h1>
+					<h2 id="my-subheading">Oh, brave new world that has such frameworks in it!</h2>
+					<p id="my-snarky-comment">Hmmmmm... jsx less ugly than pure js implementation, but still looks like bad spat-out-backwards php echos</p>
+				</div>,
+				document.getElementById("app")
+			);
+		</script>
+	</body>
+</html>
