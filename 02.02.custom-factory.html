@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Life (and death?) of a Component Returns</title>
+	</head>
+	<body>
+		<div id="app">
+			<!-- app code will appear here -->
+		</div>
+		<script src="./react/build/react.js"></script>
+		<script src="./react/build/react-dom.js"></script>
+		<script>
+			'use strict';
+			let MyComponent = React.createClass({
+				//specs
+				render: function(){
+					return React.DOM.span(null, "I'm too custom for this div, too custom for this div, too custom by far.....but now in a factory!");
+				}
+			});
+			let ComponentFactory = React.createFactory(MyComponent);
+			ReactDOM.render(
+				ComponentFactory(),
+				document.getElementById('app')
+			);
+		</script>
+	</body>
+</html>
