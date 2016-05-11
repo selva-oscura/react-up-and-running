@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>State &amp; Components</title>
+	</head>
+	<body>
+		<div id="app">
+			<!-- app code will appear here -->
+		</div>
+		<script src="./react/build/react.js"></script>
+		<script src="./react/build/react-dom.js"></script>
+		<script>
+			'use strict';
+
+			let TextAreaCounter = React.createClass({
+				propTypes: {
+					text: React.PropTypes.string,
+				},
+				getInitialState: function(){
+					return {
+						text: this.props.text,
+					};
+				},
+				_textChange: function(e){
+					this.setState({
+						text: e.target.value,
+					});
+				},
+				render: function(){
+					return React.DOM.div(null,
+						React.DOM.textarea({
+							value: this.state.text,
+							onChange: this._textChange,
+							style: {
+								width: "400px",
+								height: "80px"
+							}
+						}),
+						React.DOM.h3(null, this.state.text.length)
+					);
+				}
+			});
+
+			ReactDOM.render(
+				React.createElement(TextAreaCounter, {
+					text: "Stateful (as text is changed, the count should update to reflect those changes to the text)",
+				}),
+				document.getElementById('app')
+			)
+		</script>
+	</body>
+</html>
