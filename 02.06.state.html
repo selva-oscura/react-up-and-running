@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>State &amp; Components</title>
+	</head>
+	<body>
+		<div id="app">
+			<!-- app code will appear here -->
+		</div>
+		<script src="./react/build/react.js"></script>
+		<script src="./react/build/react-dom.js"></script>
+		<script>
+			'use strict';
+
+			let TextAreaCounter = React.createClass({
+				propTypes: {
+					text: React.PropTypes.string,
+				},
+				render: function(){
+					return React.DOM.div(null,
+						React.DOM.textarea({
+							defaultValue: this.props.text,
+							style: {
+								width: "400px",
+								height: "80px"
+							}
+						}),
+						React.DOM.h3(null, this.props.text.length)
+					);
+				}
+			});
+
+			ReactDOM.render(
+				React.createElement(TextAreaCounter, {
+					text: "Stateless (defined defaults rather than the app having to keep track of its state all by its lonesome)",
+				}),
+				document.getElementById('app')
+			)
+		</script>
+	</body>
+</html>
