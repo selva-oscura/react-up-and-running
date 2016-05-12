@@ -38,6 +38,10 @@
 				PropTypes: {
 					count: React.PropTypes.number.isRequred,
 				},
+				shouldComponentUpdate: function(nextProps, nextState){
+					// console.log(this.name + '::shouldComponentUpdate()')
+					return nextProps.count !== this.props.count;
+				},
 				render: function(){
 					console.log(this.name + '::render()');
 					return React.DOM.span(null, this.props.count)
